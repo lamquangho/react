@@ -7,7 +7,7 @@ const TodoNew = (props) => {
 
     //addNewTodo("Linh")
     const handleClick = () => {
-        console.log('>>> check inputValue: ', inputValue)
+
         addNewTodo(inputValue)
     }
     const handleChange = (name) => {

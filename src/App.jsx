@@ -10,13 +10,25 @@ const App = () => {
     address: "Binh Thuan",
     phone: "0123456789"
   }
-  const addNewTodo = (name) => {
-    alert(`toi ten la ${name}`)
-  }
   const [todoList, setTodoList] = useState([
     { id: 1, name: "Linh" },
     { id: 2, name: "Ho" },
   ])
+  const addNewTodo = (name) => {
+    const newTodo = {
+      id: randomIntFromInterval(3, 1000000),
+      name: name
+    }
+    //biến setTodoList để thay đổi giá trị của todoList mỗi lần cập nhật giống thêm mới
+    //...todoList để giữ lại các giá trị cũ
+    setTodoList([...todoList, newTodo])
+  }
+  const randomIntFromInterval = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+
+
 
   return (
     <div className="todo-container">
