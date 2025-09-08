@@ -9,12 +9,18 @@ const App = () => {
     address: "Binh Thuan",
     phone: "0123456789"
   }
+  const addNewTodo = (name) => {
+    alert(`toi ten la ${name}`)
+  }
+
   return (
     <div className="todo-container">
       <div className="todo-title">
         Todo List
       </div>
-      <TodoNew />
+      <TodoNew
+        addNewTodo={addNewTodo}
+      />
       <TodoData
         name={name}
         data={data}
