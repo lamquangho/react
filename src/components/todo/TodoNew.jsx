@@ -1,4 +1,4 @@
-const todoNew = () => {
+const TodoNew = () => {
     return (
         <>
             <div className="todo-new">
@@ -8,4 +8,4 @@ const todoNew = () => {
         </>
     )
 }
-export default todoNew
+export default TodoNew
