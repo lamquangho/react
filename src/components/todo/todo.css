@@ -1,0 +1,51 @@
+.todo-title {
+    color: rgb(216, 131, 74);
+    font-size: 40px;
+    padding: 150px 0 20px 0;
+    left: 50%;
+    margin: 100px 0 0 550px;
+
+}
+
+.todo-new {
+    margin: 100px 0 0 500px;
+    margin-top: 10px;
+
+}
+
+.todo-data {
+    margin: 20px 0 0 500px;
+}
+
+.logo {
+    margin: 100px 0 0 500px;
+    height: 6em;
+    padding: 1.5em;
+    margin-top: 10px;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
