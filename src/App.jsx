@@ -4,15 +4,10 @@ import TodoData from './components/todo/TodoData'
 import reactLogo from './assets/react.svg'
 import { useState } from 'react';
 const App = () => {
-  const name = "Ho";
-  const data = {
-    age: 22,
-    address: "Binh Thuan",
-    phone: "0123456789"
-  }
+
   const [todoList, setTodoList] = useState([
-    { id: 1, name: "Linh" },
-    { id: 2, name: "Ho" },
+    // { id: 1, name: "Linh" },
+    // { id: 2, name: "Ho" },
   ])
   const addNewTodo = (name) => {
     const newTodo = {
@@ -39,8 +34,6 @@ const App = () => {
         addNewTodo={addNewTodo}
       />
       <TodoData
-        name={name}
-        data={data}
 
         todoList={todoList}
       />

@@ -19,7 +19,7 @@ const TodoNew = (props) => {
         <>
             <div className="todo-new">
                 <input type="text"
-                    onChange={() => handleChange(event.target.value)} value={inputValue} />
+                    onChange={(event) => handleChange(event.target.value)} value={inputValue} />
                 <button style={{ cursor: "pointer" }} onClick={handleClick} >
                     Add
                 </button>

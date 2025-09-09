@@ -7,9 +7,8 @@ const TodoData = (props) => {
         <>
             <div className='todo-data'>
                 {todoList.map((item, index) => {
-                    console.log('>>> check item: ', index, item)
                     return (
-                        <div className="todo-item">
+                        <div className={`todo-item`} key={item.id}>
                             <div  >{item.name} </div>
 
                             <button>Delete</button>
@@ -17,9 +16,7 @@ const TodoData = (props) => {
                     )
                 })}
 
-                <div>
-                    {JSON.stringify(todoList)}
-                </div>
+
             </div>
         </>
     )
