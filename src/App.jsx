@@ -33,13 +33,17 @@ const App = () => {
       <TodoNew
         addNewTodo={addNewTodo}
       />
-      <TodoData
+      // toán tử diều kiện :  dk ? đúng thì viết gì đúng ở đây : cái này nếu đk sai
+      {todoList.length > 0 ?
+        <TodoData
 
-        todoList={todoList}
-      />
-      <div>
-        <img src={reactLogo} className='logo' />
-      </div>
+          todoList={todoList}
+        />
+        :
+        <div>
+          <img src={reactLogo} className='logo' />
+        </div>
+      }
     </div>
   )
 }
