@@ -12,7 +12,7 @@ const TodoNew = (props) => {
         setInputValue("")
     }
     const handleChange = (name) => {
-        console.log(name)
+        //console.log(name)
         setInputValue(name)
     }
     return (
