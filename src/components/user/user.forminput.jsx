@@ -1,24 +1,30 @@
-import { Input } from "antd";
+import { Input, notification } from "antd";
 import { Button } from "antd";
 import { use, useState } from "react";
-import axios from "axios";
+import axios from "../../services/axios.customize";
+import { createUserAPI, updateUserAPI } from "../../services/api.service";
 const UserFormInput = () => {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
-    console.log("Full Name:", fullName);
-    const handleClick = () => {
-        const URL_BACKEND = "http://localhost:8080/api/v1/user";
-        const data = {
-            fullName: fullName,
-            email: email,
-            password: password,
-            phone: phone
+    // console.log("Full Name:", fullName);
+    const handleClick = async () => {
+        const res = await createUserAPI(fullName, email, password, phone);
+        if (res.data) {
+            notification.success({
+                message: 'User Created Successfully',
+                description: `User ${res.data.fullName} has been created.`,
+            });
         }
-        axios.post(URL_BACKEND, data)
-        console.log("Data sent to backend:", data);
+        console.log("check res:", res.data);
+
     }
+    const handleUpdateCLick = () => {
+        updateUserAPI(fullName, email, password, phone);
+        //console.log("Update user clicked");
+    }
+
     return (
         <div>
             <div>
@@ -40,6 +46,7 @@ const UserFormInput = () => {
             </div>
             <div>
                 <Button type="primary" onClick={handleClick}>Create User</Button>
+                <Button type="default" onClick={handleUpdateCLick}>Update User</Button>
             </div>
 
         </div>
