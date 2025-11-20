@@ -14,13 +14,20 @@ const UserFormInput = () => {
         if (res.data) {
             notification.success({
                 message: 'User Created Successfully',
-                description: `User ${res.data.fullName} has been created.`,
+                description: "Tao user thanh cong!",
+            });
+        } else {
+            notification.error({
+                message: 'User Creation Failed',
+                //description: "Tao user that bai!",
+                description: JSON.stringify(res.message),
             });
         }
-        console.log("check res:", res.data);
+        //console.log("check res:", res.data);
 
     }
     const handleUpdateCLick = () => {
+
         updateUserAPI(fullName, email, password, phone);
         //console.log("Update user clicked");
     }

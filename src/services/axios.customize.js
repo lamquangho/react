@@ -1,10 +1,8 @@
 import axios from "axios";
 
 const apiService = axios.create({
-    baseURL: "http://localhost:8080/",
-    headers: {
-        "Content-Type": "application/json",
-    },
+    baseURL: import.meta.env.VITE_BACKEND_URL,
+
 });
 // Add a request interceptor
 apiService.interceptors.request.use(function (config) {
@@ -12,6 +10,7 @@ apiService.interceptors.request.use(function (config) {
     return config;
 }, function (error) {
     // Do something with request error
+    if (error.response && error.response.data) return error.response.data;
     return Promise.reject(error);
 },
 
@@ -29,6 +28,8 @@ apiService.interceptors.response.use(function onFulfilled(response) {
     , function onRejected(error) {
         // Any status codes that falls outside the range of 2xx cause this function to trigger
         // Do something with response error
+        //debugger
+        if (error.response && error.response.data) return error.response.data;
         return Promise.reject(error);
     });
 export default apiService;
